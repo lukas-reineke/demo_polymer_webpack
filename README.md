@@ -2,20 +2,8 @@
 
 
 
-## Install the Polymer-CLI
+## Sample for stackoverflow to try to find the webpack solution
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your element locally.
+polymer:dev runs polymer serve and works 
+webpack:dev runs webpack-dev-server and crashes
 
-## Viewing Your Element
-
-```
-$ polymer serve
-```
-
-## Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
