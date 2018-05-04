@@ -6,11 +6,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-    entry: path.resolve(__dirname, 'index.js'),
+    entry: path.resolve(__dirname, 'demo_polymer_webpack-element.js'),
     output: {
-        filename: '[name].bundle.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname, './dist'),
-        publicPath: 'dist/'
+    },
+    devServer: {
+        contentBase: path.resolve(__dirname, './dist'),
     },
     resolve: {
         modules: ['bower_components', 'node_modules'],
@@ -23,7 +25,12 @@ module.exports = {
             {
                 test: /\.html$/,
                 use: [
-                    { loader: 'babel-loader' },
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['es2015']
+                        }
+                    },
                     { loader: 'polymer-webpack-loader' }
                 ]
             },
@@ -33,7 +40,7 @@ module.exports = {
                     {
                         loader: 'babel-loader',
                         options: {
-                            presets: ['env']
+                            presets: ['es2015']
                         }
                     }
                 ]
